@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>day4.1_dom</title>
+  </head>
+  <body>
+    <h1>DOM</h1>
+    <pre>
+      1.DOM
+      2.document.body.querySelector()
+      3.innerHTML
+      4.onclick, onkeydown="..."
+      5.Event object in onkeydown
+      6.String and Numbers
+    </pre>
+    <p>YouTube Subscribe Button</p>
+    <button onclick="subcribe()" class="sub-btn">Subscribe</button>
+    <br />
+    <br />
+    <p>Amazon Shipping Calculator</p>
+    <p>Order under $40 = +$10 shipping</p>
+    <p>Order over $40 = FREE shipping.</p>
+    <input
+      class="amount"
+      placeholder="Enter the amount"
+      style="padding-left: 20px"
+    />
+    <button class="calculate" onclick="calculate()">Calculate</button>
+    <p class="display"></p>
+    <br />
+    <br />
+    <input type="text" id="textbox" onkeyup="updateText()" />
+    <p id="display-text"></p>
+
+    <script>
+      function updateText() {
+        var textBox = document.getElementById("textbox");
+        var displayText = document.getElementById("display-text");
+        displayText.textContent = textBox.value;
+      }
+
+      function subcribe() {
+        const Event_btn = document.body.querySelector(".sub-btn");
+        if (Event_btn.innerText === "Subscribe") {
+          Event_btn.innerText = "Subscribed";
+        } else {
+          Event_btn.innerText = "Subscribe";
+        }
+      }
+      function calculate() {
+        const amount = document.body.querySelector(".amount");
+        const display = document.body.querySelector(".display");
+        if (Number(amount.value) < 40) {
+          display.innerHTML = `$${Number(amount.value) + 10}`;
+        } else {
+          display.innerHTML = `$${amount.value}`;
+        }
+      }
+    </script>
+  </body>
+</html>

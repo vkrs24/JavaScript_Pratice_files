@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>day2.1_variables</title>
+  </head>
+  <body>
+    <h1>let</h1>
+    <h1>const</h1>
+    <h1>var</h1>
+    <button onclick="calculation+='1';console.log(calculation)">1</button>
+    <button onclick="calculation+='2';console.log(calculation)">2</button>
+    <button onclick="calculation+='3';console.log(calculation)">3</button>
+    <button onclick="calculation+='4';console.log(calculation)">4</button>
+    <button onclick="calculation+='5';console.log(calculation)">5</button>
+    <button onclick="calculation+='6';console.log(calculation)">6</button>
+    <button onclick="calculation+='7';console.log(calculation)">7</button>
+    <button onclick="calculation+='8';console.log(calculation)">8</button>
+    <button onclick="calculation+='9';console.log(calculation)">9</button>
+    <button onclick="calculation+='0';console.log(calculation)">0</button>
+    <button onclick="calculation+='+';console.log(calculation)">+</button>
+    <button onclick="calculation+='-';console.log(calculation)">-</button>
+    <button onclick="calculation+='*';console.log(calculation)">x</button>
+    <button onclick="calculation+='/';console.log(calculation)">/</button>
+    <button onclick="calc()">=</button>
+    <button onclick="reset()">Reset</button>
+    <script>
+      let name = "Vasanth";
+      console.log(`My name is ${name}`);
+      let coffee = 5;
+      let bagles = 3;
+      let soup = 9;
+      let cost = coffee + bagles + soup;
+      console.log(`Cost of food:$${cost}`);
+      let tax = cost * 0.1;
+      console.log(`Tax Amount:$${tax.toFixed(2)}`);
+      let total_cost = cost + tax;
+      console.log(`Total Cost:$${total_cost}`);
+      let calculation = "";
+      function calc() {
+        let result = eval(calculation);
+        console.log(result);
+      }
+      function reset() {
+        calculation = "";
+        console.log("Values are reset");
+      }
+    </script>
+  </body>
+</html>
