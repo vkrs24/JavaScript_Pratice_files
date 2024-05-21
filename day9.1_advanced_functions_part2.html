@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>day9.1_advanced_functions_part2</title>
+  </head>
+  <body>
+    <pre>
+        1.Functions are values
+        2.setTimeout(), setInterval()
+        3..forEach()
+        4.Arrow functions, .addEventListener()
+        5..filter(), .map()
+        6.Closure
+    </pre>
+    <script>
+      function multiply(p1, p2) {
+        console.log(p1 * p2);
+      }
+      multiply(2, 3);
+      multiply(7, 10);
+      const mult = () => 2 * 3;
+      console.log(mult());
+      cnt = 0;
+      const postivecnt = (array) => {
+        array.forEach((value) => {
+          if (value >= 0) {
+            cnt++;
+          }
+        });
+        console.log(cnt);
+      };
+
+      postivecnt([1, -2, 3]);
+      postivecnt([1, -2, , -5, 7, 3]);
+
+      const addnum = (arr, num) => {
+        return arr.map((value) => {
+          return value + num;
+        });
+      };
+      console.log(addnum([1, 2, 3], 2));
+      console.log(addnum([-2, -1, 0, 99], 2));
+
+      const removeegg = (array) => {
+        return array.filter((value) => {
+          if (value !== "egg") {
+            return true;
+          }
+        });
+      };
+      console.log(removeegg(["egg", "harm", "egg", "egg", "chicken"]));
+
+      const removeegg2 = (array) => {
+        cnt = 0;
+        return array.filter((value) => {
+          if (value !== "egg" || cnt > 1) {
+            return true;
+          } else {
+            cnt++;
+          }
+        });
+      };
+      console.log(removeegg2(["egg", "harm", "egg", "egg", "chicken"]));
+    </script>
+  </body>
+</html>
