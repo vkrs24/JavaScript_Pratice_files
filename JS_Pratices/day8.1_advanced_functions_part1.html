@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><day8 class="1_advanced_functions_part1"></day8></title>
+  </head>
+  <body>
+    <h1>Use Console to view result</h1>
+    <button class="finish" onclick="settime()">Start</button>
+    <br />
+    <br />
+    <button class="finish2" onclick="settime2()">Start</button>
+    <br />
+    <br />
+    <button onclick="settime3()">Add to cart</button>
+    <p class="finish3"></p>
+    <br />
+    <button onclick="settime4()">Add to cart</button>
+    <p class="finish4"></p>
+    <script>
+      const add = function (parameter) {
+        console.log(parameter);
+      };
+      add(2 + 3);
+      add(2 + 2);
+      function runtwice(fun) {
+        fun();
+        runtwice(fun());
+      }
+      runtwice(function () {
+        console.log("12b");
+      });
+
+      function settime() {
+        const btn = document.querySelector(".finish");
+        setTimeout(function () {
+          btn.innerText = "Finished!";
+        }, 1000);
+      }
+
+      function settime2() {
+        const btn = document.querySelector(".finish2");
+        btn.innerText = "Loading...";
+        setTimeout(function () {
+          btn.innerText = "Finished!";
+        }, 2000);
+      }
+
+      function settime3() {
+        const btn = document.querySelector(".finish3");
+        btn.innerText = "Added";
+        setTimeout(function () {
+          btn.innerText = "";
+        }, 2000);
+      }
+      let timeid;
+      function settime4() {
+        const btn = document.querySelector(".finish4");
+        btn.innerHTML = "Added";
+        clearTimeout(timeid);
+        timeid = setTimeout(() => {
+          btn.innerHTML = "";
+        }, 2000);
+      }
+    </script>
+  </body>
+</html>
